@@ -15,8 +15,15 @@ const Cn_AP_Task = () => {
         style={styles.button}
         onPress={() => setValue(value + 1)}
       >
-        <Text style={styles.btntext}>Press Me</Text>
+        <Text style={styles.btntext}>Increase</Text>
       </TouchableOpacity>
+       <TouchableOpacity
+        style={styles.button2}
+        onPress={() => setValue(value > 0 ? value-1 : 0)}
+      >
+        <Text style={styles.btntext}>Decrease</Text>
+      </TouchableOpacity>
+
       <Text>{value}</Text>
     </View>
   );
@@ -33,6 +40,16 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: '#DDDDDD',
+    height: 50,
+    width: 100,
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 20,
+    marginBottom:20
+  },
+   button2: {
+    backgroundColor: 'red',
     height: 50,
     width: 100,
     padding: 10,
