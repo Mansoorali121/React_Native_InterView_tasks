@@ -9,4 +9,4 @@ import Cn_AP_Task from './src/Screens/Cn_AP_Task';
 import Names_Task from './src/Screens/Names_Task';
 import Task3 from './src/Screens/Task3';
 
-AppRegistry.registerComponent(appName, () => Cn_AP_Task);
+AppRegistry.registerComponent(appName, () => Task3);
