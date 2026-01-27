@@ -2,16 +2,17 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React, { useState } from 'react';
 
 const Task3 = () => {
-  const [show, setShow] = useState('Show');
+  const [isvisible, setisVisible] = useState(false);
   return (
     <View style={styles.container}>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => setShow(show === 'Show' ? 'Hide' : 'Show')}
+        onPress={()=>setisVisible(!isvisible)}
       >
         <Text>Click Me</Text>
       </TouchableOpacity>
-      <Text>{show}</Text>
+      <Text>{isvisible ? 'Click to Hide' : 'CLick to Show'}</Text>
+      {isvisible && <Text>This is Some Additional Text</Text>}
     </View>
   );
 };
