@@ -17,6 +17,10 @@ const Names_Task = () => {
     { id: 5, name: 'Ali' },
     { id: 6, name: 'Ahmed' },
   ];
+  //   Function to Handle Button Press and Item Name
+  const handlePress = name => {
+    Alert.alert(`You Pressed on ${name}`);
+  };
   return (
     <View style={styles.container}>
       <FlatList
@@ -26,7 +30,7 @@ const Names_Task = () => {
           return (
             <TouchableOpacity
               style={styles.namecontainer}
-              onPress={() => Alert.alert('Button Pressed..!')}
+              onPress={() => handlePress(item.name)}
             >
               <Text style={styles.nametext}>{item.name}</Text>
             </TouchableOpacity>
