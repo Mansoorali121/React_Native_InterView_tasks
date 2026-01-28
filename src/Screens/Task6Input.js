@@ -1,4 +1,11 @@
-import { FlatList, StyleSheet, Text, TextInput, View } from 'react-native';
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React, { useState } from 'react';
 
 const Task6Input = () => {
@@ -8,6 +15,10 @@ const Task6Input = () => {
     { id: 2, name: 'Mansoor' },
     { id: 3, name: 'Smith' },
     { id: 4, name: 'Ahsan' },
+    { id: 5, name: 'Hassan' },
+    { id: 6, name: 'Mohsin' },
+    { id: 7, name: 'Asad' },
+    { id: 8, name: 'Manzoor' },
   ]);
   return (
     <View style={styles.container}>
@@ -19,12 +30,14 @@ const Task6Input = () => {
       />
       <FlatList
         data={Data}
+        numColumns={2}
         keyExtractor={name => name.id.toString()}
         renderItem={({ item }) => {
           return (
-            <View>
-              <Text>{item.name}</Text>
-            </View>
+            <TouchableOpacity style={styles.itemcontainer}>
+              <Text style={styles.itemtext}>{item.id}</Text>
+              <Text style={styles.itemtext}>{item.name}</Text>
+            </TouchableOpacity>
           );
         }}
       />
@@ -48,5 +61,18 @@ const styles = StyleSheet.create({
     padding: 10,
     width: '60%',
     borderRadius: 12,
+    marginBottom: 20,
   },
+  itemcontainer: {
+    backgroundColor: '#587688',
+    padding: 10,
+    width: 100,
+    borderRadius: 20,
+    height: 40,
+    marginBottom: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginStart: 10,
+  },
+  itemtext: { color: '#ffff' },
 });
