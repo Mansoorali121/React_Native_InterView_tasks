@@ -10,7 +10,7 @@ import React, { useState } from 'react';
 
 const Task6Input = () => {
   const [search, setSearch] = useState('');
-  const [Data, setData] = useState([
+  const [originaldata, setoriginalData] = useState([
     { id: 1, name: 'John' },
     { id: 2, name: 'Mansoor' },
     { id: 3, name: 'Smith' },
@@ -20,13 +20,26 @@ const Task6Input = () => {
     { id: 7, name: 'Asad' },
     { id: 8, name: 'Manzoor' },
   ]);
+  const [Data,setData] = useState(originaldata);
+
+  //   Search Functionality Here
+  const handleSearch = text => {
+  setSearch(text);
+
+  const filtered = originaldata.filter(item =>
+    item.name.toLowerCase().includes(text.toLowerCase())
+  );
+
+  setData(filtered);
+};
+
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.inputstyle}
         placeholder="Search Names here: "
         value={search}
-        onChangeText={setSearch}
+        onChangeText={handleSearch}
       />
       <FlatList
         data={Data}
