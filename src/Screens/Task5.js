@@ -19,11 +19,11 @@ const Task5 = () => {
   ]);
 
   //   Function to Delete Item
-//   const deleteItem = id => {
-//     Alert.alert('Deleted item with id is : ' + id);
-//     const filteredItems = products.filter(item => item.id !== id);
-//     setProducts(filteredItems);
-//   };
+  const deleteItem = id => {
+    Alert.alert('Deleted item with id is : ' + id);
+    const filteredItems = products.filter(item => item.id !== id);
+    setProducts(filteredItems);
+  };
 
 
 
