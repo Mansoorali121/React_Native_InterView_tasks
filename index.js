@@ -10,5 +10,6 @@ import Names_Task from './src/Screens/Names_Task';
 import Task3 from './src/Screens/Task3';
 import Text_Input_Display from './src/Screens/Text_Input_Display';
 import Button_Disable_Logic from './src/Screens/Button_Disable_Logic';
+import Task5 from './src/Screens/Task5';
 
-AppRegistry.registerComponent(appName, () => Button_Disable_Logic);
+AppRegistry.registerComponent(appName, () => Task5);
