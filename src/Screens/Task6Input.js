@@ -20,6 +20,7 @@ const Task6Input = () => {
     { id: 7, name: 'Asad' },
     { id: 8, name: 'Manzoor' },
   ]);
+  // 
   const [Data,setData] = useState(originaldata);
 
   //   Search Functionality Here
@@ -27,7 +28,7 @@ const Task6Input = () => {
   setSearch(text);
 
   const filtered = originaldata.filter(item =>
-    item.name.toLowerCase().includes(text.toLowerCase())
+    item.name.includes(text)
   );
 
   setData(filtered);
@@ -39,10 +40,10 @@ const Task6Input = () => {
         style={styles.inputstyle}
         placeholder="Search Names here: "
         value={search}
-        onChangeText={handleSearch}
+        onChangeText={setSearch}
       />
       <FlatList
-        data={Data}
+        data={originaldata}
         numColumns={2}
         keyExtractor={name => name.id.toString()}
         renderItem={({ item }) => {
