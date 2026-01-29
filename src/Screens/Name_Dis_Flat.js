@@ -65,6 +65,8 @@ const styles = StyleSheet.create({
     padding: 7,
     alignItems: 'center',
     marginTop: 20,
+    justifyContent:"center",
+    borderRadius:12
   },
   nameText: { fontSize: 14, fontWeight: '600', color: '#fff', marginTop: 10 },
   selectedItembg: {
