@@ -53,11 +53,10 @@ const Task8APIdataFetch = () => {
 export default Task8APIdataFetch;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff', },
+  container: { flex: 1, backgroundColor: '#fff' },
   loader: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-
   },
 });
