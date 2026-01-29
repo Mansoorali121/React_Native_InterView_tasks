@@ -13,5 +13,6 @@ import Button_Disable_Logic from './src/Screens/Button_Disable_Logic';
 import Task5 from './src/Screens/Task5';
 import Task6Input from './src/Screens/Task6Input';
 import Name_Dis_Flat from './src/Screens/Name_Dis_Flat';
+import Task8APIdataFetch from './src/Screens/Task8APIdataFetch';
 
-AppRegistry.registerComponent(appName, () => Name_Dis_Flat);
+AppRegistry.registerComponent(appName, () => Task8APIdataFetch);
