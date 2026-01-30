@@ -14,9 +14,11 @@ const Task9RefreshApi = () => {
 
   const Fetchdata = async () => {
     try {
+      setLoading(true);
       const reponse = await axios.get(
         'https://69609023e7aa517cb79661a7.mockapi.io/Books',
       );
+      
       setDataa(reponse.data);
       console.log(reponse.data);
       setLoading(false);
@@ -33,12 +35,14 @@ const Task9RefreshApi = () => {
   return (
     <View style={styles.container}>
       {loading ? (
-        <View style={{marginTop:20}}>
-            <ActivityIndicator size="large" color="blue" />
-            </View>
+        <View style={{ marginTop: 20 }}>
+          <ActivityIndicator size="large" color="blue" />
+        </View>
       ) : (
         <FlatList
           data={Dataa}
+          refreshing={loading}
+          onRefresh={Fetchdata}
           showsVerticalScrollIndicator={false}
           keyExtractor={item => item.id.toString()}
           renderItem={({ item }) => {
