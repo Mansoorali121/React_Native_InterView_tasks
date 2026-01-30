@@ -1,4 +1,5 @@
 import {
+  Alert,
   Pressable,
   StyleSheet,
   Text,
@@ -6,18 +7,57 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 
 const Task10LoginValidation = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  //   Register User
+  const registerUser = () => {
+    if (!name) {
+      Alert.alert('Name is Required: ');
+    }
+    if (!email) {
+      Alert.alert('Email is Required: ');
+    }
+    if (!password || password.length < 6) {
+      Alert.alert('Password length Should be Greater then 6 : ');
+    } else {
+      Alert.alert('User Registered Successfully: ');
+      Alert.alert('User name is', name);
+      Alert.alert('User Email is', email);
+      Alert.alert('User Password is', password);
+      setName('');
+      setEmail('');
+      setPassword('');
+    }
+  };
   return (
     <View style={styles.container}>
       <View style={styles.formcontainer}>
         <View style={styles.inputcontainer}>
-          <TextInput placeholder="Enter Name" style={styles.input} />
-          <TextInput placeholder="Enter Email" style={styles.input} />
-          <TextInput placeholder="Enter Password" style={styles.input} />
+          <TextInput
+            placeholder="Enter Name"
+            style={styles.input}
+            value={name}
+            onChangeText={setName}
+          />
+          <TextInput
+            placeholder="Enter Email"
+            style={styles.input}
+            value={email}
+            onChangeText={setEmail}
+          />
+          <TextInput
+            placeholder="Enter Password"
+            style={styles.input}
+            value={password}
+            onChangeText={setPassword}
+          />
           <Text style={styles.forgettext}>Forgot Password? </Text>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={registerUser}>
             <Text style={styles.registerbutton}>Register</Text>
           </TouchableOpacity>
         </View>
@@ -29,7 +69,7 @@ const Task10LoginValidation = () => {
 export default Task10LoginValidation;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  container: { flex: 1, alignItems: 'center', marginTop: 200 },
   formcontainer: {
     backgroundColor: '#F17547',
     borderWidth: 1,
