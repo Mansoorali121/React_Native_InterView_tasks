@@ -15,5 +15,6 @@ import Task6Input from './src/Screens/Task6Input';
 import Name_Dis_Flat from './src/Screens/Name_Dis_Flat';
 import Task8APIdataFetch from './src/Screens/Task8APIdataFetch';
 import Task9RefreshApi from './src/Screens/Task9RefreshApi';
+import Task10LoginValidation from './src/Screens/Task10LoginValidation';
 
-AppRegistry.registerComponent(appName, () => Task9RefreshApi);
+AppRegistry.registerComponent(appName, () => Task10LoginValidation);
