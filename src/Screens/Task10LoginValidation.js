@@ -26,12 +26,9 @@ const Task10LoginValidation = () => {
       Alert.alert('Password length Should be Greater then 6 : ');
     } else {
       Alert.alert('User Registered Successfully: ');
-      // Alert.alert('User name is', name);
-      // Alert.alert('User Email is', email);
-      // Alert.alert('User Password is', password);
-      setName('');
       setEmail('');
       setPassword('');
+      setName('');
     }
   };
   return (
