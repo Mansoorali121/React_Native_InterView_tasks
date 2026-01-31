@@ -36,19 +36,19 @@ const Task10LoginValidation = () => {
       <View style={styles.formcontainer}>
         <View style={styles.inputcontainer}>
           <TextInput
-            placeholder="Enter Name"
+            placeholder="Enter Your Name"
             style={styles.input}
             value={name}
             onChangeText={setName}
           />
           <TextInput
-            placeholder="Enter Email"
+            placeholder="Enter  Your Email"
             style={styles.input}
             value={email}
             onChangeText={setEmail}
           />
           <TextInput
-            placeholder="Enter Password"
+            placeholder="Enter Your Password"
             style={styles.input}
             value={password}
             onChangeText={setPassword}
